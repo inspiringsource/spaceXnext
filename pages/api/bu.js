@@ -23,23 +23,19 @@ console.log('launches', launches)
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-        SpaceX Mission Names
+        SpaceX Updates
         </h1>
 
         <p className={styles.description}>
-          Mission detailes from SpaceX API
+          Latest laucnhes from SpaceX API
         </p>
 
         <div className={styles.grid}>
           {launches.map(function(launch){
             return (
-          <a key={launch.id} href={launch.links.wikipedia} className={styles.card}>
-    
-        
+          <a key={launch.id} href="https://nextjs.org/docs" className={styles.card}>
             <h2>{launch.mission_name}</h2>
-            <p><b>Rocket name:</b> {launch.rocket.rocket_name}</p>
-            <p><b>Launch success:</b> {launch.launch_success?"Yes":"No"}</p>
-            <p><b>Launch date:</b> { new Date(launch.launch_date_local).toLocaleDateString("en-GB") }</p>
+            <p>Launched on : { new Date(launch.launch_date_local).toLocaleDateString("en-GB") }</p>
           </a>
             )
             
@@ -80,11 +76,7 @@ export async function getStaticProps() {
         launchesPast(limit: 10) {
           id
           mission_name
-          mission_id
-          launch_success
-          launch_year
           launch_date_local
-        
           launch_site {
             site_name_long
           }
@@ -92,7 +84,6 @@ export async function getStaticProps() {
             article_link
             video_link
             mission_patch
-            wikipedia
           }
           rocket {
             rocket_name
