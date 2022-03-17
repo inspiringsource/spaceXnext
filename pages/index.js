@@ -27,7 +27,7 @@ export default function Home({ launches }) {
         </h1>
 
         <p className={styles.description}>
-          Mission detailes from SpaceX API
+        Next Js, Apollo and GraphQL to build a SpaceX mission overview.
         </p>
 
         <div className={styles.grid}>
