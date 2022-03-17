@@ -12,7 +12,7 @@ import {
 
 export default function Home({ launches }) {
 
-console.log('launches', launches)
+// console.log('launches', launches)
   return (
     <div className={styles.container}>
       <Head>
