@@ -8,6 +8,7 @@ import {
   useQuery,
   gql
 } from "@apollo/client";
+import inf from '../spacex.png'
 
 
 export default function Home({ launches }) {
@@ -34,18 +35,23 @@ console.log('launches', launches)
         {launches.map(launch => {
             return (
           <a key={launch.id} href={launch.links.wikipedia} className={styles.card}>
-    
-            {/* <Image src={(launch.links.flickr_images).url} /> */}
-            {/* {launch.links.mission_patchs && (
-              <Image src={launch.links.mission_patch} alt={launch.id} width={50} height={50} layout="relative" />
-            )} */}
-                 {launch.links.flickr_images[0] && (<Image src={launch.links.flickr_images[0]}
+                 {/* {launch.links.flickr_images[0] && (<Image src={launch.links.flickr_images[0]}
                     alt={launch.mission_name}
                     width="230"
                     height="230"
                     allow='autoplay; encrypted-media'
-
-                /> )}
+                /> )} */}
+            {launch.links.flickr_images[0] ? (<Image src={launch.links.flickr_images[0]}
+                    alt={launch.mission_name}
+                    width="230"
+                    height="230"
+                    allow='autoplay; encrypted-media'
+                /> ): (<Image src={inf}
+                  alt={launch.mission_name}
+                  width="230"
+                  height="230"
+                  allow='autoplay; encrypted-media'
+              /> )}
             <h2>{launch.mission_name}</h2>
             <p><b>Mission name:</b> {launch.mission_name}</p>
             <p><b>Rocket used:</b> {launch.rocket.rocket_name}</p>
