@@ -1,5 +1,5 @@
-#SpaceX mission overview
-Playing around with Next Js, Apollo and GraphQL to build a SpaceX mission overview.
+# SpaceX mission overview
+A simple Next, Apollo and GraphQL App that shows all past launches for SpaceX.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

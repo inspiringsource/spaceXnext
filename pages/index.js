@@ -12,7 +12,7 @@ import {
 
 export default function Home({ launches }) {
 
-// console.log('launches', launches)
+console.log('launches', launches)
   return (
     <div className={styles.container}>
       <Head>
@@ -23,21 +23,32 @@ export default function Home({ launches }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-        SpaceX Mission Names
+        List of launches
         </h1>
 
         <p className={styles.description}>
-        Next Js, Apollo and GraphQL to build a SpaceX mission overview.
+        Next Js, Apollo and GraphQL to build a SpaceX launches overview.
         </p>
 
         <div className={styles.grid}>
-          {launches.map(function(launch){
+        {launches.map(launch => {
             return (
           <a key={launch.id} href={launch.links.wikipedia} className={styles.card}>
     
-        
+            {/* <Image src={(launch.links.flickr_images).url} /> */}
+            {/* {launch.links.mission_patchs && (
+              <Image src={launch.links.mission_patch} alt={launch.id} width={50} height={50} layout="relative" />
+            )} */}
+                 {launch.links.flickr_images[0] && (<Image src={launch.links.flickr_images[0]}
+                    alt={launch.mission_name}
+                    width="230"
+                    height="230"
+                    allow='autoplay; encrypted-media'
+
+                /> )}
             <h2>{launch.mission_name}</h2>
-            <p><b>Rocket name:</b> {launch.rocket.rocket_name}</p>
+            <p><b>Mission name:</b> {launch.mission_name}</p>
+            <p><b>Rocket used:</b> {launch.rocket.rocket_name}</p>
             <p><b>Launch success:</b> {launch.launch_success?"Yes":"No"}</p>
             <p><b>Launch date:</b> { new Date(launch.launch_date_local).toLocaleDateString("en-GB") }</p>
           </a>
@@ -93,6 +104,7 @@ export async function getStaticProps() {
             video_link
             mission_patch
             wikipedia
+            flickr_images
           }
           rocket {
             rocket_name
