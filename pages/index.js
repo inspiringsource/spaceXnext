@@ -8,7 +8,7 @@ import {
   useQuery,
   gql
 } from "@apollo/client";
-import inf from '../spacex.png'
+import inf from '../imageSpacexapi.svg'
 
 
 export default function Home({ launches }) {
