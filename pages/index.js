@@ -24,11 +24,11 @@ console.log('launches', launches)
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-        List of launches
+        List of Falcon 9 launches
         </h1>
 
         <p className={styles.description}>
-        Next Js, Apollo and GraphQL to build a SpaceX launches overview.
+        Data from the SpaceX API in Next.js with Apollo GraphQL.
         </p>
 
         <div className={styles.grid}>
