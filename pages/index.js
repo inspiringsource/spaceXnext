@@ -34,13 +34,9 @@ console.log('launches', launches)
         <div className={styles.grid}>
         {launches.map(launch => {
             return (
-          <a key={launch.id} href={launch.links.wikipedia} className={styles.card}>
-                 {/* {launch.links.flickr_images[0] && (<Image src={launch.links.flickr_images[0]}
-                    alt={launch.mission_name}
-                    width="230"
-                    height="230"
-                    allow='autoplay; encrypted-media'
-                /> )} */}
+            <a key={launch.id} href={launch.links.wikipedia} className={styles.card}>
+            
+            {/* check if image available with ternary operator */}
             {launch.links.flickr_images[0] ? (<Image src={launch.links.flickr_images[0]}
                     alt={launch.mission_name}
                     width="230"
@@ -52,6 +48,7 @@ console.log('launches', launches)
                   height="230"
                   allow='autoplay; encrypted-media'
               /> )}
+            
             <h2>{launch.mission_name}</h2>
             <p><b>Mission name:</b> {launch.mission_name}</p>
             <p><b>Rocket used:</b> {launch.rocket.rocket_name}</p>
